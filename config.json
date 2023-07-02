@@ -1,0 +1,21 @@
+{
+  "ELASTICAPIKEY": "APIkey",
+  "REEDAPIKEY": "APIkey",
+  "EMAILFROM": "example@example.com",
+  "EMAILTO": "example@example.com",
+  "JOBSEARCH": {
+    "keywords": "job",
+    "locationName": "location",
+    "distanceFromLocation": 1,
+    "permanent": true,
+    "fullTime": true,
+    "contract": false,
+    "temp": false,
+    "minimumSalary": 1,
+    "postedByRecruitmentAgency": false,
+    "postedByDirectEmployer": true
+  },
+  "_comment": "The Reed API has a couple more options available",
+  "WORDFILTER": ["eggs", "spam", "bacon", "Sales", "spam"],
+  "PHRASEFILTER": ["baked beans", "work from home", "egg and spam"]
+}
