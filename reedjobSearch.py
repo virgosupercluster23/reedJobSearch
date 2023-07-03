@@ -8,7 +8,7 @@ from time import sleep
 with open(os.getcwd()+"/config.json") as f:
     CONFIG = json.load(f)
 
-DB = os.getcwd()+'/'+CONFIG['DBNAME']
+DB = os.getcwd() +   '/jobs.db' #assumes script runs from the cwd
 ELASTICAPIKEY =      CONFIG['ELASTICAPIKEY']
 REEDAPIKEY =         CONFIG['REEDAPIKEY']
 EMAILFROM =          CONFIG['EMAILFROM']
@@ -111,23 +111,21 @@ def logBlockedEmail(i):
         f.write(text)
 
 
-def toFilter(jobtitle):
+def toFilter(jobtitle, jobDescription):
     ''' filters are lowercase, jobtitle is lowercase '''
     if any(keyword in jobtitle.lower() for keyword in WORDFILTER):
         return True
     if any(phrase in jobtitle.lower() for phrase in PHRASEFILTER):
         return True
+    if any(phrase in jobDescription.lower() for phrase in PHRASEFILTER):
+        return True
     else:
         return False
-
-#this function can be improved by a third if clause, where the arguments
-#include jobdescription, check last, phrases only, if the phrase occurs in
-#the job description also return True. This should be insensitive enough.
 
 #for every jobsearch, if not previously emailed, if not filtered, email/update db emailed
 for i in jobsearch_results:
     if i['emailed'] == 0:
-        if toFilter(i['jobTitle']) == True:
+        if toFilter(i['jobTitle'], i['jobDescription']) == True:
             logBlockedEmail(i)
             emailedTrue(i['jobId'])
         else:
