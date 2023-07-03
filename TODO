@@ -1,13 +1,7 @@
 If i have two scripts with similar search parameters, they return duplicate emails
-
 Currently i run one script per search parameter, which means this will be a problem
-
 Each script runs in its own folder, if each script ran in the same folder, then a
-
 system could be developed for a parent process, checking all processes before emailer
-
 and if duplicates detected, filter them like phrasefilters do.
-
 This would take longer and expose it to more room for failure, but its a program
-
 with low uptime needs, it should not need excessive exception handling
