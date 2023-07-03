@@ -15,7 +15,10 @@
     "postedByRecruitmentAgency": false,
     "postedByDirectEmployer": true
   },
-  "_comment": "The Reed API has a couple more options available",
+  "_comment": ["The Reed API has a couple more options available",
+  "https://www.reed.co.uk/developers/Jobseeker for more information",
+  "Word filters are dangerously imprecise, phrase filters less so"
+  ],
   "WORDFILTER": ["eggs", "spam", "bacon", "Sales", "spam"],
   "PHRASEFILTER": ["baked beans", "work from home", "egg and spam"]
 }
