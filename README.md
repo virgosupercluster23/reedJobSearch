@@ -12,5 +12,3 @@ The search profile in the config.json is complete for me but the reed jobsearch 
 I use PythonAnywhere to set multiple search profiles up on task schedules, it currently needs multiple scheduled tasks, although it could be rewritten to bring them all under the one program. I run it hourly, 24/7, this gives me new jobs. It will give you all jobs that are live on first run, after that, new stuff trickles through slowly, especially if you developed the blocked word/phrase list. That can be initiated by looking at the first runs db population (jobTitle/jobDescription), and looking for the jobs you don't like "sales", or "work from home", might be spam among your intended jobs, they tend to be jobs which post spam on all job types.
 
 Elastic email API is easy to set up. Reed Jobsearch API is easy to set up too.
-
-The script has one more tweak to make, some jobs dont show their cards in the jobTitle, so i will add a couple lines more code to check blocked phrases in the jobDescription too. Otherwise it seems to work fine.
