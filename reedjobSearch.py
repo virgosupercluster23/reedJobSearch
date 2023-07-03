@@ -85,7 +85,8 @@ def emailer(html_content, jobTitle, employerName):
     url = 'https://api.elasticemail.com/v2/email/send'
     from_address = EMAILFROM
     to_address = EMAILTO
-    subject = "REED JOB AD: {} vacancy posted by {}".format(jobTitle, employerName)
+    jobtype = JOBSEARCH['keywords'].split()[0]
+    subject = "REED {} AD: {} vacancy posted by {}".format(jobtype, jobTitle, employerName)
     message = html_content
     payload = {'apikey': ELASTICAPIKEY, 'from': from_address, 'to': to_address, 'subject': subject, 'bodyHtml': message}
     response = requests.post(url, data=payload)
